@@ -56,20 +56,90 @@ describe('filter.js', () => {
     it('', async () => {
     });
 });
+
 describe('divide.js', () => {
-    it('', async () => {
+    it('Should return 2 with parameters 10 and 5', async () => {
+        const dividend = 10;
+        const divisor = 5;
+        const quotient = divide(dividend, divisor);
+        expect(quotient).to.equal(2);
+    });
+    it('Should return 1 with parameters 10 and 10', async () => {
+        const dividend = 10;
+        const divisor = 10;
+        const quotient = divide(dividend, divisor);
+        expect(quotient).to.equal(1);
+    });
+    it('Should return 1 with parameters 20 and 5', async () => {
+        const dividend = 20;
+        const divisor = 5;
+        const quotient = divide(dividend, divisor);
+        expect(quotient).to.equal(4);
     });
 });
+
 describe('isEmpty.js', () => {
-    it('', async () => {
+    it('Should return true with parameter null', async () => {
+        const value = null;
+        const empty = isEmpty(value);
+        expect(empty).to.be.true;
+    });
+    it('Should return false with a value as parameter', async () => {
+        const value = 'deez nuts';
+        const empty = isEmpty(value);
+        expect(empty).to.be.false;
+    });
+    it('Should return false with an array that has elements', async () => {
+        const value = ['deez', 'nuts', 'ha', 'gottem'];
+        const empty = isEmpty(value);
+        expect(empty).to.be.false;
+    });
+    it('Should return true with an empty array', async () => {
+        const value = [];
+        const empty = isEmpty(value);
+        expect(empty).to.be.true;
     });
 });
 describe('ceil.js', () => {
-    it('', async () => {
+    it('should return 5 with number 4.5 and precision 1', async () => {
+        const number = 4.5;
+        const precision = 1;
+        const ceiling = ceil(number, precision);
+        expect(ceiling).to.be.equal(5);
+    });
+    it('should return 100 with number 95 and precision 10', async () => {
+        const number = 95;
+        const precision = 10;
+        const ceiling = ceil(number, precision);
+        expect(ceiling).to.be.equal(100);
+    });
+    it('should return 5 with number 4.006', async () => {
+        const number = 4.006;
+        const ceiling = ceil(number);
+        expect(ceiling).to.be.equal(5);
+    });
+    it('should return 5 with number 4.006', async () => {
+        const number = 4.006;
+        const precision = 2;
+        const ceiling = ceil(number, precision);
+        expect(ceiling).to.be.equal(6.01);
     });
 });
+
 describe('drop.js', () => {
-    it('', async () => {
+    it('Should return [2, 3] with parameter [1, 2, 3] and 1', async () => {
+        const arr = [1, 2, 3];
+        const amountToDrop = 1;
+        const dropped = drop(arr, amountToDrop);
+        console.log(dropped)
+        expect(dropped).to.include(2, 3);
+    });
+    it('Should return [3] with parameter [1, 2, 3] and 2', async () => {
+        const arr = [1, 2, 3];
+        const amountToDrop = 2;
+        const dropped = drop(arr);
+        console.log(dropped)
+        expect(dropped).to.include(3);
     });
 });
 describe('toInteger.js', () => {
