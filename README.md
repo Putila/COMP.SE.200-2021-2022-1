@@ -11,7 +11,12 @@ and LICENSE file.
 Source code folder contains a separate license file that must **NOT** be removed under any circumstances!
 Removing this license file directly violates terms and conditions of the software under testing.
 Individuals who remove or modify the license file will also carry the consequences.
-
+## List of dependencies
+- c8
+- chai
+- coveralls
+- mocha
+- mochawesome
 ## Testing instructions
 - Install dependencies using `npm install`
 - Tests can be run locally with the command `npm run test`
