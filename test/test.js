@@ -101,28 +101,27 @@ describe('isEmpty.js', () => {
     });
 });
 describe('ceil.js', () => {
-    it('should return 5 with number 4.5 and precision 1', async () => {
-        const number = 4.5;
-        const precision = 1;
-        const ceiling = ceil(number, precision);
-        expect(ceiling).to.be.equal(5);
-    });
-    it('should return 100 with number 95 and precision 10', async () => {
-        const number = 95;
-        const precision = 10;
-        const ceiling = ceil(number, precision);
-        expect(ceiling).to.be.equal(100);
-    });
+    it('should return a number', async () => {
+        const number = 4.006;
+        const ceiling = ceil(number);
+        expect(ceiling).to.be.a('number');
+    } )
     it('should return 5 with number 4.006', async () => {
         const number = 4.006;
         const ceiling = ceil(number);
         expect(ceiling).to.be.equal(5);
     });
-    it('should return 5 with number 4.006', async () => {
-        const number = 4.006;
+    it('should return 6.01 with number 6.004 and precision 2', async () => {
+        const number = 6.004;
         const precision = 2;
         const ceiling = ceil(number, precision);
         expect(ceiling).to.be.equal(6.01);
+    });
+    it('should return 6100 with number 6040 and precision -2', async () => {
+        const number = 6040;
+        const precision = -2;
+        const ceiling = ceil(number, precision);
+        expect(ceiling).to.be.equal(6100);
     });
 });
 
