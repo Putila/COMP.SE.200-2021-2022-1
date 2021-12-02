@@ -15,4 +15,4 @@ Individuals who remove or modify the license file will also carry the consequenc
 ## Testing instructions
 - Install dependencies using `npm install`
 - Tests can be run locally with the command `npm run test`
-- If you want to run tests and create a mochaowesome report, use `npm run test-report`
+- If you want to run tests and create a mochawesome report, use `npm run test-report`
