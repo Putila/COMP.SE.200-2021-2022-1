@@ -58,17 +58,17 @@ describe('filter.js', () => {
 });
 
 describe('divide.js', () => {
-    it('Should return 2 with parameters 10 and 5', async () => {
-        const dividend = 10;
-        const divisor = 5;
-        const quotient = divide(dividend, divisor);
-        expect(quotient).to.equal(2);
-    });
     it('Should return 1 with parameters 10 and 10', async () => {
         const dividend = 10;
         const divisor = 10;
         const quotient = divide(dividend, divisor);
         expect(quotient).to.equal(1);
+    });
+    it('Should return 2 with parameters 10 and 5', async () => {
+        const dividend = 10;
+        const divisor = 5;
+        const quotient = divide(dividend, divisor);
+        expect(quotient).to.equal(2);
     });
     it('Should return 1 with parameters 20 and 5', async () => {
         const dividend = 20;
@@ -130,22 +130,56 @@ describe('drop.js', () => {
         const arr = [1, 2, 3];
         const amountToDrop = 1;
         const dropped = drop(arr, amountToDrop);
-        console.log(dropped)
         expect(dropped).to.include(2, 3);
     });
     it('Should return [3] with parameter [1, 2, 3] and 2', async () => {
         const arr = [1, 2, 3];
         const amountToDrop = 2;
-        const dropped = drop(arr);
-        console.log(dropped)
+        const dropped = drop(arr, amountToDrop);
         expect(dropped).to.include(3);
     });
 });
 describe('toInteger.js', () => {
-    it('', async () => {
+    it('Should return number', async () => {
+        const floatNumber = '';
+        const integerResult = toInteger(floatNumber);
+        expect(integerResult).to.be.a('number');
+    });
+    it('Should return 3 with float 3.2', async () => {
+        const floatNumber = 3.2;
+        const integerResult = toInteger(floatNumber);
+        expect(integerResult).to.equal(3);
+    });
+    it('Should return 10 with float 10.123951', async () => {
+        const floatNumber = 10.123951;
+        const integerResult = toInteger(floatNumber);
+        expect(integerResult).to.equal(10);
+    });
+    it('Should return 0 with a string as parameter', async () => {
+        const floatNumber = "my name jeff";
+        const integerResult = toInteger(floatNumber);
+        expect(integerResult).to.equal(10);
     });
 });
 describe('toString.js', () => {
-    it('', async () => {
+    it('Should return a string', async () => {
+        const input = 1;
+        const resultString = toString(input);
+        expect(resultString).to.be.a('string');
+    });
+    it('Should return "123" with input 123', async () => {
+        const input = 123;
+        const resultString = toString(input);
+        expect(resultString).to.equal('123');
+    });
+    it('Should return "1,2,3" with input [1, 2, 3]', async () => {
+        const input = [1, 2, 3];
+        const resultString = toString(input);
+        expect(resultString).to.equal('1,2,3');
+    });
+    it('Should return empty string with input null', async () => {
+        const input = null;
+        const resultString = toString(input);
+        expect(resultString).to.equal('');
     });
 });
